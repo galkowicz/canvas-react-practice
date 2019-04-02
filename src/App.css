@@ -20,3 +20,7 @@
     top: .2rem;
     left: .2rem;
 }
+
+.reset-button {
+    float: right;
+}

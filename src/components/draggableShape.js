@@ -19,18 +19,12 @@ class DraggableShape extends Component {
 
 	render() {
 		const { onClose, src } = this.props;
-		let style = {};
-		if (this.state.isDragStarted) {
-			style = {position: 'absolute'}
-		} else {
-			style = {position: 'relative'};
-		}
 
 		if (!src) {
 			return null;
 		}
 		return (
-			<div className='draggable-shape' draggable onDragStart={this.onDragStart} id='cropped' style={style}>
+			<div className='draggable-shape' draggable onDragStart={this.onDragStart} id='cropped'>
 				<Icon name='times' onClick={onClose} className='icon' size='large'/>
 				<img src={src} alt=''/>
 			</div>

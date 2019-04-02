@@ -40,7 +40,7 @@ class ImageCropper extends Component {
 			        width={this.canvasWidth} height={this.canvasHeight}/>
 			<img ref={'image'} src={imageSrc} className='hidden' alt=''/>
 			<DraggableShape onClose={this.resetShape} src={this.state.croppedSrc} initialPosition={lastClickedPoint}/>
-			<Button onClick={this.resetShape}>Reset</Button>
+			<Button onClick={this.resetShape} className='reset-button'>Reset</Button>
 		</div>;
 	}
 
@@ -79,6 +79,8 @@ class ImageCropper extends Component {
 
 		if (dx * dx + dy * dy < 1000) {
 			this.cropShape();
+		} else {
+			this.resetShape();
 		}
 
 		this.setState({ draw: false });
